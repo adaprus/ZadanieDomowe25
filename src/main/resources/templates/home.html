@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Budżet domowy</title>
+    <style>
+        .site{
+            margin: 15px;
+        }
+
+        .form-row{
+            width: 150px;
+        }
+    </style>
+</head>
+<body class="site">
+<h2>Wprowadź nowy wydatek</h2>
+<form action="/add" method="get">
+    <div class="col-2">
+        <h5>Typ transakcji</h5>
+    </div>
+    <div class="form-column">
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio1" name="transactionType" class="custom-control-input" checked>
+            <label class="custom-control-label" for="customRadio1">Wydatek</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio2" name="transactionType" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio2">Przychód</label>
+        </div>
+    </div>
+    <div class="form-column">
+        <div class="form-row">
+            <label for="description"><h5>Opis transakcji</h5></label>
+            <input type="text" class="form-control" placeholder="opis" name="description" id="description" required>
+        </div>
+        <div class="form-row">
+            <label for="amount"><h5>Kwota transakcji</h5></label>
+            <input type="number" step="0.01" class="form-control" placeholder="cena" name="amount" id="amount" required>
+        </div>
+        <label for="transactionDate"><h5>Data transakcji</h5></label>
+        <input type="date" name="transactionDate" id="transactionDate" required><br/>
+        <input type="submit" class="btn btn-primary" value="Dodaj transkację">
+    </div>
+</form>
+</body>
+</html>
